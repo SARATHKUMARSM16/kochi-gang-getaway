@@ -1467,3 +1467,68 @@ footer {
     font-size: 9px;
   }
 }
+
+
+/* FIX INNER MAGAZINE PAGES ON MOBILE */
+@media screen and (max-width: 699px) {
+
+  /* All inner pages */
+  .pg:not(.cover) .in {
+    box-sizing: border-box;
+    padding: 10px !important;
+    overflow: hidden;
+  }
+
+  /* Hero image pages */
+  .pg.hero .head {
+    max-width: 100%;
+    line-height: 1.05;
+    overflow-wrap: break-word;
+  }
+
+  .pg.hero .head .lg {
+    font-size: clamp(25px, 7vw, 38px) !important;
+  }
+
+  .pg.hero .head .sm {
+    font-size: clamp(15px, 4vw, 21px) !important;
+  }
+
+  /* Hero text card */
+  .pg.hero .card {
+    box-sizing: border-box;
+    max-width: 100%;
+    padding: 10px !important;
+  }
+
+  .pg.hero .card .lead {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  .pg.hero .card .items {
+    font-size: 10px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Normal inner pages */
+  .pg:not(.cover):not(.hero) h2 {
+    font-size: 16px !important;
+    line-height: 1.15 !important;
+  }
+
+  .pg:not(.cover):not(.hero) .lead {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+
+  .pg:not(.cover):not(.hero) .items {
+    font-size: 10px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Page number */
+  .pg .fn {
+    font-size: 8px;
+  }
+}
