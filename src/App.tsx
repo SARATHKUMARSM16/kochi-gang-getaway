@@ -18,7 +18,7 @@ function tick() {
 let CR: Record<string, string> | null = null;
 function useCredits() {
   const [c, setC] = useState(CR || {});
-  useEffect(() => { if (CR) return; fetch('/images/credits.json').then(r => r.json()).then(j => { CR = j; setC(j); }).catch(() => {}); }, []);
+  useEffect(() => { if (CR) return; fetch('/images/credits.json').then(r => r.json()).then(j => { CR = j; setC(j); }).catch(() => { }); }, []);
   return c;
 }
 function Pics({ slug }: { slug: string }) {
@@ -55,7 +55,21 @@ export default function App() {
   const [mute, setMute] = useState(false);
   const [toc, setToc] = useState(false);
   const [map, setMap] = useState(false);
-  const wide = typeof window !== 'undefined' && window.matchMedia('(min-width: 700px)').matches;
+  const [wide, setWide] = useState(
+    () => typeof window !== 'undefined' &&
+      window.matchMedia('(min-width: 700px)').matches
+  );
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 700px)');
+
+    const update = () => setWide(media.matches);
+
+    update();
+    media.addEventListener('change', update);
+
+    return () => media.removeEventListener('change', update);
+  }, []);
   const shift = !wide ? 'none' : page === 0 ? 'translateX(-25%)' : page >= PAGES.length - 1 ? 'translateX(25%)' : 'none';
   const total = PAGES.length;
 
@@ -77,40 +91,42 @@ export default function App() {
       <main>
         <button className="arrow" aria-label="Previous page" onClick={() => book.current?.pageFlip().flipPrev()}>‹</button>
         <div className="stage"><div className="shift" style={{ transform: shift }}>
-        <Flip ref={book} width={440} height={620} size="stretch" minWidth={290} maxWidth={900} minHeight={420} maxHeight={1200}
-          showCover drawShadow maxShadowOpacity={0.5} flippingTime={900} usePortrait startPage={0} startZIndex={0}
-          autoSize mobileScrollSupport swipeDistance={30} clickEventForward useMouseEvents showPageCorners
-          disableFlipByClick={false} className="book" style={{}}
-          onFlip={(e: any) => { setPage(e.data); if (!muted.current) tick(); }}>
-          {PAGES.map((p, i) => {
-            const last = i === total - 1;
-            if (p.kind === 'cover') return (
-              <Pg key={i} n={1} hard cls="cover">
-                <img className="coverimg" src="/images/cover.jpg" alt="Chinese fishing nets at Fort Kochi" onError={e => (e.currentTarget.style.display = 'none')} /><div className="shade" />
-                <div className="ctop"><small>FRIENDS TRAVEL EDITION</small><small>MAY / JUNE 2027</small></div>
-                <h1>KOCHI</h1>
-                <div className="cbot"><h3>The Gang Getaway</h3><p className="tagline">“Nine Friends. Two Days. Countless Memories.”</p></div>
-              </Pg>);
-            const H = HERO[p.slug];
-            if (H) return (
-              <Pg key={i} n={i + 1} hard={last} cls="hero odd">
-                <HeroImg slug={p.slug} /><div className="shade2" />
-                <span className="label">{H.label}</span>
-                <h2 className="head">{H.head.map((l, j) => <span key={j} className={l[0] === '^' ? 'lg' : 'sm'}>{l.replace('^', '')}</span>)}</h2>
-                <div className="card"><p className="lead">{p.lead}</p><Items items={p.items} />
-                  {p.note && <p className={last ? 'quote' : 'note'}>{p.note}</p>}<span className="status">{p.status}</span></div>
-              </Pg>);
-            return (
-              <Pg key={i} n={i + 1} hard={last} cls={`${i % 2 ? 'odd' : 'even'} ${DARK.includes(p.slug) ? 'dark' : ''} ${PIC_BOTTOM.includes(p.slug) ? 'pb' : ''}`}>
-                <span className="kick">{p.kicker}</span><h2>{p.title}</h2>
-                {p.kind === 'map' ? <MapView full={false} onFull={setMap} /> : <Pics slug={p.slug} />}
-                <p className="lead">{p.lead}</p>
-                <Items items={p.items} />
-                                {p.note && <p className={last ? 'quote' : 'note'}>{p.note}</p>}
-                <span className="status">{p.status}</span>
-              </Pg>);
-          })}
-        </Flip>
+          <Flip ref={book} width={440} height={620} size="stretch"
+            minWidth={280} maxWidth={680}
+            minHeight={390} maxHeight={960}
+            showCover drawShadow maxShadowOpacity={0.5} flippingTime={900} usePortrait startPage={0} startZIndex={0}
+            autoSize mobileScrollSupport swipeDistance={30} clickEventForward useMouseEvents showPageCorners
+            disableFlipByClick={false} className="book" style={{}}
+            onFlip={(e: any) => { setPage(e.data); if (!muted.current) tick(); }}>
+            {PAGES.map((p, i) => {
+              const last = i === total - 1;
+              if (p.kind === 'cover') return (
+                <Pg key={i} n={1} hard cls="cover">
+                  <img className="coverimg" src="/images/cover.jpg" alt="Chinese fishing nets at Fort Kochi" onError={e => (e.currentTarget.style.display = 'none')} /><div className="shade" />
+                  <div className="ctop"><small>FRIENDS TRAVEL EDITION</small><small>MAY / JUNE 2027</small></div>
+                  <h1>KOCHI</h1>
+                  <div className="cbot"><h3>The Gang Getaway</h3><p className="tagline">“Nine Friends. Two Days. Countless Memories.”</p></div>
+                </Pg>);
+              const H = HERO[p.slug];
+              if (H) return (
+                <Pg key={i} n={i + 1} hard={last} cls="hero odd">
+                  <HeroImg slug={p.slug} /><div className="shade2" />
+                  <span className="label">{H.label}</span>
+                  <h2 className="head">{H.head.map((l, j) => <span key={j} className={l[0] === '^' ? 'lg' : 'sm'}>{l.replace('^', '')}</span>)}</h2>
+                  <div className="card"><p className="lead">{p.lead}</p><Items items={p.items} />
+                    {p.note && <p className={last ? 'quote' : 'note'}>{p.note}</p>}<span className="status">{p.status}</span></div>
+                </Pg>);
+              return (
+                <Pg key={i} n={i + 1} hard={last} cls={`${i % 2 ? 'odd' : 'even'} ${DARK.includes(p.slug) ? 'dark' : ''} ${PIC_BOTTOM.includes(p.slug) ? 'pb' : ''}`}>
+                  <span className="kick">{p.kicker}</span><h2>{p.title}</h2>
+                  {p.kind === 'map' ? <MapView full={false} onFull={setMap} /> : <Pics slug={p.slug} />}
+                  <p className="lead">{p.lead}</p>
+                  <Items items={p.items} />
+                  {p.note && <p className={last ? 'quote' : 'note'}>{p.note}</p>}
+                  <span className="status">{p.status}</span>
+                </Pg>);
+            })}
+          </Flip>
         </div></div>
         <button className="arrow" aria-label="Next page" onClick={() => book.current?.pageFlip().flipNext()}>›</button>
       </main>
