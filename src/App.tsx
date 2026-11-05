@@ -55,22 +55,12 @@ export default function App() {
   const [mute, setMute] = useState(false);
   const [toc, setToc] = useState(false);
   const [map, setMap] = useState(false);
-  const [wide, setWide] = useState(
-    () => typeof window !== 'undefined' &&
-      window.matchMedia('(min-width: 700px)').matches
-  );
-
-  useEffect(() => {
-    const media = window.matchMedia('(min-width: 700px)');
-
-    const update = () => setWide(media.matches);
-
-    update();
-    media.addEventListener('change', update);
-
-    return () => media.removeEventListener('change', update);
-  }, []);
-  const shift = !wide ? 'none' : page === 0 ? 'translateX(-25%)' : page >= PAGES.length - 1 ? 'translateX(25%)' : 'none';
+  const shift =
+    page === 0
+      ? 'translateX(-25%)'
+      : page >= PAGES.length - 1
+        ? 'translateX(25%)'
+        : 'none';
   const total = PAGES.length;
 
   useEffect(() => {
@@ -91,10 +81,22 @@ export default function App() {
       <main>
         <button className="arrow" aria-label="Previous page" onClick={() => book.current?.pageFlip().flipPrev()}>‹</button>
         <div className="stage"><div className="shift" style={{ transform: shift }}>
-          <Flip ref={book} width={440} height={620} size="stretch"
-            minWidth={280} maxWidth={680}
-            minHeight={390} maxHeight={960}
-            showCover drawShadow maxShadowOpacity={0.5} flippingTime={900} usePortrait startPage={0} startZIndex={0}
+          <Flip
+            ref={book}
+            width={440}
+            height={620}
+            size="stretch"
+            minWidth={150}
+            maxWidth={520}
+            minHeight={210}
+            maxHeight={740}
+            showCover
+            drawShadow
+            maxShadowOpacity={0.5}
+            flippingTime={900}
+            usePortrait={false}
+            startPage={0}
+            startZIndex={0}
             autoSize mobileScrollSupport swipeDistance={30} clickEventForward useMouseEvents showPageCorners
             disableFlipByClick={false} className="book" style={{}}
             onFlip={(e: any) => { setPage(e.data); if (!muted.current) tick(); }}>
