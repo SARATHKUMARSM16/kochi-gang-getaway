@@ -57,11 +57,11 @@ export default function App() {
   const [map, setMap] = useState(false);
   const [wide, setWide] = useState(
     () => typeof window !== 'undefined' &&
-      window.matchMedia('(min-width: 700px)').matches
+      window.matchMedia('(min-width: 700px) and (orientation: landscape)').matches
   );
 
   useEffect(() => {
-    const media = window.matchMedia('(min-width: 700px)');
+    const media = window.matchMedia('(min-width: 700px) and (orientation: landscape)');
 
     const update = () => setWide(media.matches);
 
