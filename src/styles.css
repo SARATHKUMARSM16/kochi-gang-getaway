@@ -1286,6 +1286,7 @@ footer {
     gap: 7px;
     font-size: 10px;
   }
+}
 
   
 /* MOBILE DOUBLE-PAGE TYPOGRAPHY FIX */
@@ -1344,13 +1345,17 @@ footer {
   }
 
   /* Cover title - prevent clipping */
-  .cover h1 {
-    font-size: clamp(43px, 13vw, 65px);
-    line-height: 0.95;
-    letter-spacing: -2px;
-    white-space: nowrap;
-    max-width: 100%;
-  }
+.pg.cover h1 {
+  font-size: clamp(36px, 11vw, 52px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  white-space: nowrap;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
 
   .cover .ctop {
     font-size: 8px;
@@ -1404,4 +1409,61 @@ footer {
   }
 }
 
+  
+@media (max-width: 699px) {
+
+  .pg:not(.cover):not(.hero) .in {
+    padding: 12px 8px 24px;
+    gap: 6px;
+  }
+
+  .pg:not(.cover):not(.hero) h2 {
+    font-size: clamp(13px, 4vw, 18px);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .pg:not(.cover):not(.hero) .lead {
+    font-size: clamp(9px, 2.8vw, 11px);
+    line-height: 1.4;
+    padding-left: 5px;
+  }
+
+  .pg:not(.cover):not(.hero) .items {
+    font-size: clamp(8px, 2.5vw, 10px);
+    line-height: 1.35;
+    gap: 5px;
+  }
+
+  .pg:not(.cover):not(.hero) .items li {
+    padding-left: 5px;
+  }
+
+  .pg:not(.cover):not(.hero) .note,
+  .pg:not(.cover):not(.hero) .quote {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .pg .status {
+    font-size: 7px;
+  }
+
+  .cover .ctop {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .cover .cbot {
+    left: 6%;
+    right: 6%;
+  }
+
+  .cover .cbot h3 {
+    font-size: 22px;
+  }
+
+  .cover .tagline {
+    font-size: 9px;
+  }
 }
