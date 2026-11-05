@@ -1076,7 +1076,7 @@ a {
     .full .pc img {
         height: 70px
     }
-
+}
     
 /* ===== RESPONSIVE MAGAZINE FIX ===== */
 
@@ -1273,8 +1273,8 @@ footer {
 
   footer {
     gap: 7px;
-    padding: 6px 8px;
-    font-size: 11px;
+    padding: 6px 7px;
+    font-size: 10px;
   }
 
   .bar {
@@ -1282,9 +1282,8 @@ footer {
   }
 
   footer button {
-    padding: 6px 8px;
+    padding: 6px 7px;
+    gap: 7px;
     font-size: 10px;
   }
-}
-
 }
