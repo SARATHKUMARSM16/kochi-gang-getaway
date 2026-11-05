@@ -55,12 +55,30 @@ export default function App() {
   const [mute, setMute] = useState(false);
   const [toc, setToc] = useState(false);
   const [map, setMap] = useState(false);
-  const shift =
-    page === 0
+  const [wide, setWide] = useState(
+    () => typeof window !== 'undefined' &&
+      window.matchMedia('(min-width: 700px)').matches
+  );
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 700px)');
+
+    const update = () => setWide(media.matches);
+
+    update();
+    media.addEventListener('change', update);
+
+    return () => media.removeEventListener('change', update);
+  }, []);
+
+  const shift = !wide
+    ? 'none'
+    : page === 0
       ? 'translateX(-25%)'
       : page >= PAGES.length - 1
         ? 'translateX(25%)'
         : 'none';
+
   const total = PAGES.length;
 
   useEffect(() => {
@@ -94,7 +112,7 @@ export default function App() {
             drawShadow
             maxShadowOpacity={0.5}
             flippingTime={900}
-            usePortrait={false}
+            usePortrait={true}
             startPage={0}
             startZIndex={0}
             autoSize mobileScrollSupport swipeDistance={30} clickEventForward useMouseEvents showPageCorners

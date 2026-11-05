@@ -1077,458 +1077,458 @@ a {
         height: 70px
     }
 }
-    
+
 /* ===== RESPONSIVE MAGAZINE FIX ===== */
 
 html,
 body,
 #root {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
 }
 
 .app {
-  width: 100%;
-  height: 100vh;
-  height: 100dvh;
-  min-height: 0;
-  overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
 }
 
 header {
-  flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
 main {
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow: hidden;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
 }
 
 .stage {
-  flex: 1 1 0%;
-  width: 0;
-  min-width: 0;
-  height: 100%;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+    flex: 1 1 0%;
+    width: 0;
+    min-width: 0;
+    height: 100%;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .shift {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  min-width: 0;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .book {
-  max-width: 100%;
-  max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 footer {
-  flex: 0 0 auto;
+    flex: 0 0 auto;
 }
 
 /* Small laptop screens */
 @media (min-width: 700px) and (max-height: 800px) {
-  .in {
-    padding: 1.6em 1.5em 2em;
-    gap: 0.45em;
-  }
+    .in {
+        padding: 1.6em 1.5em 2em;
+        gap: 0.45em;
+    }
 
-  .pg:not(.hero) h2 {
-    font-size: 2.15em;
-  }
+    .pg:not(.hero) h2 {
+        font-size: 2.15em;
+    }
 
-  .pics.hero {
-    height: 26%;
-  }
+    .pics.hero {
+        height: 26%;
+    }
 
-  .pics.collage {
-    height: 28%;
-  }
+    .pics.collage {
+        height: 28%;
+    }
 
-  .pics.duo {
-    height: 22%;
-  }
+    .pics.duo {
+        height: 22%;
+    }
 
-  .mapov.emb {
-    height: 48%;
-  }
+    .mapov.emb {
+        height: 48%;
+    }
 
-  .items {
-    gap: 0.4em;
-  }
+    .items {
+        gap: 0.4em;
+    }
 
-  footer {
-    padding: 6px 10px;
-  }
+    footer {
+        padding: 6px 10px;
+    }
 }
 
 /* Mobile screens */
 @media (max-width: 699px) {
-  main {
-    gap: 0;
-    padding: 4px;
-  }
+    main {
+        gap: 0;
+        padding: 4px;
+    }
 
-  .stage {
-    width: 100%;
-    min-width: 0;
-  }
+    .stage {
+        width: 100%;
+        min-width: 0;
+    }
 
-  .in {
-    padding: 18px 14px 32px;
-    gap: 0.5em;
-    overflow-y: auto;
-    scrollbar-width: none;
-    overscroll-behavior: contain;
-  }
+    .in {
+        padding: 18px 14px 32px;
+        gap: 0.5em;
+        overflow-y: auto;
+        scrollbar-width: none;
+        overscroll-behavior: contain;
+    }
 
-  .in::-webkit-scrollbar {
-    display: none;
-  }
+    .in::-webkit-scrollbar {
+        display: none;
+    }
 
-  .pg:not(.hero) h2 {
-    font-size: clamp(21px, 6vw, 27px);
-  }
+    .pg:not(.hero) h2 {
+        font-size: clamp(21px, 6vw, 27px);
+    }
 
-  .pg:not(.hero) .lead {
-    font-size: 1em;
-  }
+    .pg:not(.hero) .lead {
+        font-size: 1em;
+    }
 
-  .items {
-    font-size: 0.88em;
-    gap: 5px;
-  }
+    .items {
+        font-size: 0.88em;
+        gap: 5px;
+    }
 
-  .pics.hero {
-    height: 24%;
-    min-height: 105px;
-  }
+    .pics.hero {
+        height: 24%;
+        min-height: 105px;
+    }
 
-  .pics.duo {
-    height: 22%;
-    min-height: 90px;
-  }
+    .pics.duo {
+        height: 22%;
+        min-height: 90px;
+    }
 
-  .pics.collage {
-    height: 26%;
-    min-height: 110px;
-  }
+    .pics.collage {
+        height: 26%;
+        min-height: 110px;
+    }
 
-  .mapov.emb {
-    height: 48%;
-    min-height: 190px;
-  }
+    .mapov.emb {
+        height: 48%;
+        min-height: 190px;
+    }
 
-  .mapbar {
-    gap: 4px;
-    padding: 5px;
-    font-size: 10px;
-  }
+    .mapbar {
+        gap: 4px;
+        padding: 5px;
+        font-size: 10px;
+    }
 
-  .mapbar button {
-    font-size: 10px;
-    padding: 5px 7px;
-  }
+    .mapbar button {
+        font-size: 10px;
+        padding: 5px 7px;
+    }
 
-  .emb .legend {
-    max-width: 90%;
-    font-size: 9px;
-  }
+    .emb .legend {
+        max-width: 90%;
+        font-size: 9px;
+    }
 
-  .emb .panel {
-    width: 80%;
-    max-height: 65%;
-  }
+    .emb .panel {
+        width: 80%;
+        max-height: 65%;
+    }
 
-  .hero .card {
-    max-height: 48%;
-    padding: 0.65em 0.75em;
-    overflow-y: auto;
-  }
+    .hero .card {
+        max-height: 48%;
+        padding: 0.65em 0.75em;
+        overflow-y: auto;
+    }
 
-  .head .lg {
-    font-size: 2.3em;
-  }
+    .head .lg {
+        font-size: 2.3em;
+    }
 
-  .head .sm {
-    font-size: 1.35em;
-  }
+    .head .sm {
+        font-size: 1.35em;
+    }
 
-  .pg.cover h1 {
-    font-size: clamp(58px, 17vw, 80px);
-  }
+    .pg.cover h1 {
+        font-size: clamp(58px, 17vw, 80px);
+    }
 
-  footer {
-    gap: 7px;
-    padding: 6px 7px;
-    font-size: 10px;
-  }
+    footer {
+        gap: 7px;
+        padding: 6px 7px;
+        font-size: 10px;
+    }
 
-  .bar {
-    width: 50px;
-  }
+    .bar {
+        width: 50px;
+    }
 
-  footer button {
-    padding: 6px 7px;
-    gap: 7px;
-    font-size: 10px;
-  }
+    footer button {
+        padding: 6px 7px;
+        gap: 7px;
+        font-size: 10px;
+    }
 }
 
-  
+
 /* MOBILE DOUBLE-PAGE TYPOGRAPHY FIX */
 @media (max-width: 699px) {
 
-  /* Page content alignment */
-  .pg .in {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    padding: 12px 9px 25px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    overflow-wrap: break-word;
-  }
+    /* Page content alignment */
+    .pg .in {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 12px 9px 25px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        overflow-wrap: break-word;
+    }
 
-  /* Page headings */
-  .pg:not(.hero) h2 {
-    font-size: clamp(13px, 3.8vw, 19px);
-    line-height: 1.15;
-    margin: 5px 0 8px;
-    overflow-wrap: break-word;
-  }
+    /* Page headings */
+    .pg:not(.hero) h2 {
+        font-size: clamp(13px, 3.8vw, 19px);
+        line-height: 1.15;
+        margin: 5px 0 8px;
+        overflow-wrap: break-word;
+    }
 
-  .kick {
-    font-size: 8px;
-    letter-spacing: 1px;
-  }
+    .kick {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
 
-  /* Paragraphs */
-  .pg .lead {
-    font-size: clamp(9px, 2.7vw, 12px);
-    line-height: 1.45;
-    margin: 7px 0;
-  }
+    /* Paragraphs */
+    .pg .lead {
+        font-size: clamp(9px, 2.7vw, 12px);
+        line-height: 1.45;
+        margin: 7px 0;
+    }
 
-  /* List content */
-  .pg .items {
-    padding-left: 13px;
-    font-size: clamp(8px, 2.4vw, 11px);
-    line-height: 1.4;
-  }
+    /* List content */
+    .pg .items {
+        padding-left: 13px;
+        font-size: clamp(8px, 2.4vw, 11px);
+        line-height: 1.4;
+    }
 
-  .pg .items li {
-    margin-bottom: 5px;
-  }
+    .pg .items li {
+        margin-bottom: 5px;
+    }
 
-  .pg .items a {
-    overflow-wrap: anywhere;
-  }
+    .pg .items a {
+        overflow-wrap: anywhere;
+    }
 
-  .pg .note,
-  .pg .quote {
-    font-size: clamp(8px, 2.4vw, 11px);
-    line-height: 1.4;
-  }
+    .pg .note,
+    .pg .quote {
+        font-size: clamp(8px, 2.4vw, 11px);
+        line-height: 1.4;
+    }
 
-  /* Cover title - prevent clipping */
-.pg.cover h1 {
-  font-size: clamp(36px, 11vw, 52px);
-  line-height: 0.95;
-  letter-spacing: -2px;
-  white-space: nowrap;
-  left: 0;
-  right: 0;
-  width: 100%;
-  text-align: center;
-  overflow: hidden;
+    /* Cover title - prevent clipping */
+    .pg.cover h1 {
+        font-size: clamp(36px, 11vw, 52px);
+        line-height: 0.95;
+        letter-spacing: -2px;
+        white-space: nowrap;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .cover .ctop {
+        font-size: 8px;
+        gap: 8px;
+    }
+
+    .cover .cbot h3 {
+        font-size: clamp(19px, 6vw, 27px);
+    }
+
+    .cover .tagline {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    /* Hero pages */
+    .hero .head .lg {
+        font-size: clamp(25px, 7vw, 38px);
+    }
+
+    .hero .head .sm {
+        font-size: clamp(14px, 4vw, 20px);
+    }
+
+    .hero .card {
+        padding: 9px;
+    }
+
+    /* Page number */
+    .pg .fn {
+        font-size: 8px;
+    }
+
+    /* Footer */
+    footer {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        gap: 4px;
+        padding: 5px;
+    }
+
+    footer button {
+        font-size: 9px;
+        padding: 6px;
+        white-space: nowrap;
+    }
+
+    footer .bar {
+        max-width: 35px;
+    }
 }
 
-  .cover .ctop {
-    font-size: 8px;
-    gap: 8px;
-  }
 
-  .cover .cbot h3 {
-    font-size: clamp(19px, 6vw, 27px);
-  }
-
-  .cover .tagline {
-    font-size: 10px;
-    line-height: 1.4;
-  }
-
-  /* Hero pages */
-  .hero .head .lg {
-    font-size: clamp(25px, 7vw, 38px);
-  }
-
-  .hero .head .sm {
-    font-size: clamp(14px, 4vw, 20px);
-  }
-
-  .hero .card {
-    padding: 9px;
-  }
-
-  /* Page number */
-  .pg .fn {
-    font-size: 8px;
-  }
-
-  /* Footer */
-  footer {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    gap: 4px;
-    padding: 5px;
-  }
-
-  footer button {
-    font-size: 9px;
-    padding: 6px;
-    white-space: nowrap;
-  }
-
-  footer .bar {
-    max-width: 35px;
-  }
-}
-
-  
 @media (max-width: 699px) {
 
-  .pg:not(.cover):not(.hero) .in {
-    padding: 12px 8px 24px;
-    gap: 6px;
-  }
+    .pg:not(.cover):not(.hero) .in {
+        padding: 12px 8px 24px;
+        gap: 6px;
+    }
 
-  .pg:not(.cover):not(.hero) h2 {
-    font-size: clamp(13px, 4vw, 18px);
-    line-height: 1.12;
-    overflow-wrap: anywhere;
-  }
+    .pg:not(.cover):not(.hero) h2 {
+        font-size: clamp(13px, 4vw, 18px);
+        line-height: 1.12;
+        overflow-wrap: anywhere;
+    }
 
-  .pg:not(.cover):not(.hero) .lead {
-    font-size: clamp(9px, 2.8vw, 11px);
-    line-height: 1.4;
-    padding-left: 5px;
-  }
+    .pg:not(.cover):not(.hero) .lead {
+        font-size: clamp(9px, 2.8vw, 11px);
+        line-height: 1.4;
+        padding-left: 5px;
+    }
 
-  .pg:not(.cover):not(.hero) .items {
-    font-size: clamp(8px, 2.5vw, 10px);
-    line-height: 1.35;
-    gap: 5px;
-  }
+    .pg:not(.cover):not(.hero) .items {
+        font-size: clamp(8px, 2.5vw, 10px);
+        line-height: 1.35;
+        gap: 5px;
+    }
 
-  .pg:not(.cover):not(.hero) .items li {
-    padding-left: 5px;
-  }
+    .pg:not(.cover):not(.hero) .items li {
+        padding-left: 5px;
+    }
 
-  .pg:not(.cover):not(.hero) .note,
-  .pg:not(.cover):not(.hero) .quote {
-    font-size: 9px;
-    line-height: 1.35;
-  }
+    .pg:not(.cover):not(.hero) .note,
+    .pg:not(.cover):not(.hero) .quote {
+        font-size: 9px;
+        line-height: 1.35;
+    }
 
-  .pg .status {
-    font-size: 7px;
-  }
+    .pg .status {
+        font-size: 7px;
+    }
 
-  .cover .ctop {
-    font-size: 7px;
-    letter-spacing: 1px;
-  }
+    .cover .ctop {
+        font-size: 7px;
+        letter-spacing: 1px;
+    }
 
-  .cover .cbot {
-    left: 6%;
-    right: 6%;
-  }
+    .cover .cbot {
+        left: 6%;
+        right: 6%;
+    }
 
-  .cover .cbot h3 {
-    font-size: 22px;
-  }
+    .cover .cbot h3 {
+        font-size: 22px;
+    }
 
-  .cover .tagline {
-    font-size: 9px;
-  }
+    .cover .tagline {
+        font-size: 9px;
+    }
 }
 
 
 /* FIX INNER MAGAZINE PAGES ON MOBILE */
 @media screen and (max-width: 699px) {
 
-  /* All inner pages */
-  .pg:not(.cover) .in {
-    box-sizing: border-box;
-    padding: 10px !important;
-    overflow: hidden;
-  }
+    /* All inner pages */
+    .pg:not(.cover) .in {
+        box-sizing: border-box;
+        padding: 10px !important;
+        overflow: hidden;
+    }
 
-  /* Hero image pages */
-  .pg.hero .head {
-    max-width: 100%;
-    line-height: 1.05;
-    overflow-wrap: break-word;
-  }
+    /* Hero image pages */
+    .pg.hero .head {
+        max-width: 100%;
+        line-height: 1.05;
+        overflow-wrap: break-word;
+    }
 
-  .pg.hero .head .lg {
-    font-size: clamp(25px, 7vw, 38px) !important;
-  }
+    .pg.hero .head .lg {
+        font-size: clamp(25px, 7vw, 38px) !important;
+    }
 
-  .pg.hero .head .sm {
-    font-size: clamp(15px, 4vw, 21px) !important;
-  }
+    .pg.hero .head .sm {
+        font-size: clamp(15px, 4vw, 21px) !important;
+    }
 
-  /* Hero text card */
-  .pg.hero .card {
-    box-sizing: border-box;
-    max-width: 100%;
-    padding: 10px !important;
-  }
+    /* Hero text card */
+    .pg.hero .card {
+        box-sizing: border-box;
+        max-width: 100%;
+        padding: 10px !important;
+    }
 
-  .pg.hero .card .lead {
-    font-size: 12px !important;
-    line-height: 1.4 !important;
-  }
+    .pg.hero .card .lead {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+    }
 
-  .pg.hero .card .items {
-    font-size: 10px !important;
-    line-height: 1.4 !important;
-  }
+    .pg.hero .card .items {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+    }
 
-  /* Normal inner pages */
-  .pg:not(.cover):not(.hero) h2 {
-    font-size: 16px !important;
-    line-height: 1.15 !important;
-  }
+    /* Normal inner pages */
+    .pg:not(.cover):not(.hero) h2 {
+        font-size: 16px !important;
+        line-height: 1.15 !important;
+    }
 
-  .pg:not(.cover):not(.hero) .lead {
-    font-size: 11px !important;
-    line-height: 1.4 !important;
-  }
+    .pg:not(.cover):not(.hero) .lead {
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+    }
 
-  .pg:not(.cover):not(.hero) .items {
-    font-size: 10px !important;
-    line-height: 1.4 !important;
-  }
+    .pg:not(.cover):not(.hero) .items {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+    }
 
-  /* Page number */
-  .pg .fn {
-    font-size: 8px;
-  }
+    /* Page number */
+    .pg .fn {
+        font-size: 8px;
+    }
 }
